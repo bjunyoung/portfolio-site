@@ -1,0 +1,11 @@
+Field,Entries judged,Errors (first parser),"Accuracy, first parser (%)","Accuracy, improved parser (%)"
+Contributor names,12212,604,95.05,97.59
+Contributor count,12212,434,96.45,99.56
+Contributor order,12212,0,100,100
+Contributor roles,12212,31,99.75,99.55
+Title,12212,142,98.84,99.03
+Year,12212,867,92.9,95.13
+Year source,12212,794,93.5,95.61
+Language,12211,226,98.15,98.17
+Publication type,12212,296,97.58,97.85
+Journal or book,12212,1202,90.16,92.92

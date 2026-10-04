@@ -1,5 +1,9 @@
 project:
   type: website
+  pre-render: python3 scripts/check_aggregates.py
+  resources:
+    - "data/acc/ACC Aggregate Results 2019 and 2026.xlsx"
+    - "data/acc/*.csv"
 
 website:
   title: "Junyoung Baik"
@@ -7,7 +11,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - text: Research
+        href: research/index.qmd
+      - text: Writing
+        href: writing/index.qmd
+      - href: cv.qmd
+        text: CV
+  page-footer:
+    center: "© 2026 Junyoung Baik"
 
 format:
   html:
@@ -17,5 +28,7 @@ format:
     css: styles.css
     toc: true
 
-
-
+execute:
+  echo: false
+  warning: false
+  freeze: auto

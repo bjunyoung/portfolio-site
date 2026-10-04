@@ -1,0 +1,7 @@
+---
+title: "Research"
+toc: false
+---
+
+- [**Re-reading the ACC bibliography (2019 and 2026 editions)**](acc-bibliometrics.qmd). Parsing, AI-assisted checking and semantic drift analysis of a 17,000-entry bibliography of Western-language scholarship on ancient China.
+- *ReVape* (in preparation).

@@ -1,7 +1,14 @@
 ---
 title: "Junyoung Baik"
+toc: false
 ---
 
-This is a Quarto website.
+Research, data analysis and policy writing.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Research
+
+- [**Re-reading the ACC bibliography**](research/acc-bibliometrics.qmd): a 2026 rebuild of a 2020 study of how Western-language scholarship on ancient China has changed, using the 2019 and 2026 editions of Paul R. Goldin's bibliography.
+
+## Writing
+
+Policy memos and essays. See [Writing](writing/index.qmd).

@@ -1,0 +1,168 @@
+---
+title: "Re-reading the ACC bibliography"
+subtitle: "What two editions of a 17,000-entry bibliography show about Western-language scholarship on ancient China"
+author: "Junyoung Baik"
+date: 2026-10-04
+draft: true
+---
+
+::: {.draft-banner}
+**Draft, not for publication.** Awaiting the bibliography compiler's approval of format and content. Wording, figures and the acknowledgement may change.
+:::
+
+```{python}
+#| label: setup
+import pandas as pd
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+D = Path("../data/acc")
+C2019, C2026, GREY = "#2a78d6", "#eb6834", "#8a8984"
+INK, MUTED = "#0b0b0b", "#52514e"
+plt.rcParams.update({
+    "figure.dpi": 150, "font.size": 10, "axes.spines.top": False,
+    "axes.spines.right": False, "axes.edgecolor": MUTED, "axes.labelcolor": INK,
+    "xtick.color": MUTED, "ytick.color": MUTED, "axes.grid": True,
+    "grid.color": "#e4e3df", "grid.linewidth": 0.6, "axes.axisbelow": True,
+    "legend.frameon": False,
+})
+def table(df):
+    return df.style.hide(axis="index").format(precision=3, na_rep="")
+```
+
+## Summary
+
+In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin's *Ancient Chinese Civilization: Bibliography of Materials in Western Languages*. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.
+
+- The bibliography grew from 12,214 to 16,928 entries (+38.6%) between the two editions.
+- The subject matter of titles shifts slowly from decade to decade, and from about 1980 those shifts point in a consistent direction. This is the strongest result, and it holds in both editions.
+- Part of the apparent change in the 1970s is the move from Wade-Giles to pinyin spelling rather than a change of subject.
+- Several conclusions of the 2020 study do not hold on the rebuilt data.
+
+## The bibliography and its growth
+
+```{python}
+#| label: fig-decades
+#| fig-cap: "Dated titles per decade. The 2020s exist only in the 2026 edition and are incomplete."
+dec = pd.read_csv(D / "titles_per_decade.csv")
+fig, ax = plt.subplots(figsize=(8, 3.6))
+x = range(len(dec))
+ax.bar(x, dec["2019 edition"], color=C2019, width=0.8, label="In the 2019 edition")
+ax.bar(x, dec["Net addition in 2026"], bottom=dec["2019 edition"], color=C2026,
+       width=0.8, label="Added in the 2026 edition", edgecolor="white", linewidth=1)
+ax.set_xticks(list(x), dec["Period"], rotation=45, ha="right")
+ax.set_ylabel("Dated titles")
+ax.grid(axis="x", visible=False)
+ax.legend(loc="upper left")
+plt.tight_layout(); plt.show()
+```
+
+Most of the bibliography is recent: about three quarters of the 2019 edition's dated titles were published in 1990 or later. The 2026 additions are mostly from the 2010s and 2020s, which partly reflects the usual lag before recent work is listed.
+
+```{python}
+#| label: tbl-editions
+#| tbl-cap: "The two editions compared."
+table(pd.read_csv(D / "editions.csv"))
+```
+
+## How the field's subject matter moves
+
+Each title was converted into a numerical representation of its meaning by a multilingual language model. For each decade I took the average of those representations and measured how far it moves from the previous decade, testing every step against a shuffled-years baseline.
+
+```{python}
+#| label: fig-drift
+#| fig-cap: "Shift between consecutive decades (unbiased cosine separation × 1000), with ±2 standard errors. Filled markers pass both tests (permutation p < 0.05 and z ≥ 2)."
+dr = pd.read_csv(D / "drift_steps.csv")
+series = [("2019 corrected", "2019 edition, titles as printed", C2019),
+          ("2019 romanisation std.", "2019 edition, romanisation standardised", GREY),
+          ("2026", "2026 edition", C2026)]
+fig, ax = plt.subplots(figsize=(8, 3.8))
+for i, (key, label, col) in enumerate(series):
+    s = dr[f"{key}: shift x1000"]; se = dr[f"{key}: 2 SE x1000"]
+    ok = dr[f"{key}: established"].eq("Yes")
+    xs = [j + (i - 1) * 0.22 for j in range(len(dr))]
+    ax.errorbar(xs, s, yerr=se, fmt="none", ecolor=col, elinewidth=1.5, capsize=0)
+    ax.scatter([a for a, k in zip(xs, ok) if k], s[ok], color=col, s=40, zorder=3, label=label)
+    ax.scatter([a for a, k in zip(xs, ok) if not k], s[~ok], facecolor="white",
+               edgecolor=col, linewidth=1.5, s=40, zorder=3)
+ax.axhline(0, color=MUTED, linewidth=0.8)
+ax.set_xticks(range(len(dr)), dr["Step"])
+ax.set_ylabel("Shift × 1000")
+ax.grid(axis="x", visible=False)
+ax.legend(loc="upper right")
+plt.tight_layout(); plt.show()
+```
+
+The shifts are small but, from the 1980s onward, clearly above chance. The 1970s step passes both tests on the titles as printed, but about half of it disappears when Wade-Giles and pinyin spellings are standardised, and it then falls below two standard errors. The steps from 1980 to 2010 survive standardisation, and in the 2026 edition the new step from the 2010s to the 2020s is also clear.
+
+The steps also point the same way. Directional coherence measures whether consecutive steps continue in the same direction; because consecutive steps share a decade, chance is negative.
+
+```{python}
+#| label: tbl-coherence
+#| tbl-cap: "Directional coherence of decade steps (triples centred on 1980, 1990 and 2000)."
+table(pd.read_csv(D / "coherence.csv"))
+```
+
+## What the 2026 additions are about
+
+Titles were grouped into twelve exploratory subject clusters fitted on the 2019 edition. The 2026 additions were placed into the same clusters without refitting, so differences reflect the bibliography rather than the method. The cluster names are working labels, not validated categories.
+
+```{python}
+#| label: fig-topics
+#| fig-cap: "Share of 2026 additions minus share of 2019 titles, by exploratory subject cluster (percentage points)."
+ts = pd.read_csv(D / "topic_shares.csv").sort_values("Difference (points)")
+fig, ax = plt.subplots(figsize=(8, 4.2))
+cols = [C2026 if v > 0 else GREY for v in ts["Difference (points)"]]
+ax.barh(ts["Topic (working name)"], ts["Difference (points)"], color=cols, height=0.65)
+for y, v in enumerate(ts["Difference (points)"]):
+    ax.text(v + (0.08 if v >= 0 else -0.08), y, f"{v:+.1f}", va="center",
+            ha="left" if v >= 0 else "right", color=MUTED, fontsize=9)
+ax.axvline(0, color=MUTED, linewidth=0.8)
+ax.set_xlabel("Percentage points (more in additions →)")
+ax.grid(axis="y", visible=False)
+ax.set_xlim(-3.5, 5)
+plt.tight_layout(); plt.show()
+```
+
+The additions lean towards the classical masters (Zhuangzi, Laozi, Xunzi), texts and literature, and politics and law, and contain fewer translations and fewer titles on religion and on Han history. They fit the existing clusters almost as closely as the 2019 titles do, so no new subject area appears.
+
+## What changed from the 2020 study
+
+The rebuilt data do not support three conclusions of the 2020 study: an acceleration of change, a convergence of the field, or a ranking of decades by how much they changed. The topic model used in 2020 (LDA) was unstable from run to run, and its topics were confounded by title language. The input file of the 2020 study is lost, so that analysis cannot be re-scored directly.
+
+## Data quality
+
+Every entry of the 2019 edition was checked against its parsed fields, which produced about 4,300 corrections, including roughly 800 recovered dates. Re-running the analysis on the corrected data changed no conclusion.
+
+```{python}
+#| label: tbl-parser
+#| tbl-cap: "Accuracy of the automatic parser against the full check of the 2019 edition."
+table(pd.read_csv(D / "parser_accuracy.csv"))
+```
+
+## Methods
+
+1. **Parsing.** Each entry was split into contributors, title, year, publication type, journal or book, and language.
+2. **Checking.** Every 2019 entry and every new 2026 entry was checked against its parsed fields with the help of an AI tool (Claude), which meant sending entry-level data to that tool for processing. Every disagreement was resolved by hand. Entries repeated unchanged in 2026 inherited their 2019 checks; a random audit of 80 of them found no errors.
+3. **Embedding.** Titles were embedded with a multilingual sentence model (`paraphrase-multilingual-MiniLM-L12-v2`, 384 dimensions).
+4. **Drift.** For each decade, the average title vector was computed. Drift is the unbiased cosine separation between consecutive decade averages, tested by permutation (years shuffled) with jackknife standard errors. A step is counted when p < 0.05 and z ≥ 2.
+5. **Coherence.** Whether consecutive steps point the same way, compared with a shuffled baseline.
+6. **Subjects.** Twelve exploratory clusters fitted on 2019; the 2026 edition mapped onto them without refitting.
+
+## Limitations
+
+- The analysis describes a curated bibliography, not the whole field.
+- The 2020s are incomplete, and each edition under-covers its most recent years.
+- The subject clusters and their names are exploratory until checked against human coding.
+- Titles alone are a narrow window on content, and the measured shifts are small in absolute size.
+
+## Data
+
+Aggregate tables only; no entry-level data, titles or names. Languages with fewer than five titles are grouped, and bins with fewer than 20 titles are omitted.
+
+- [Aggregate results workbook (Excel)](<../data/acc/ACC Aggregate Results 2019 and 2026.xlsx>)
+- CSV: [editions](../data/acc/editions.csv) · [titles per decade](../data/acc/titles_per_decade.csv) · [titles per five years](../data/acc/titles_per_5yr.csv) · [languages](../data/acc/languages.csv) · [types](../data/acc/types.csv) · [drift steps](../data/acc/drift_steps.csv) · [coherence](../data/acc/coherence.csv) · [subject shares](../data/acc/topic_shares.csv) · [subjects by decade](../data/acc/topic_by_decade.csv) · [parser accuracy](../data/acc/parser_accuracy.csv)
+
+## Acknowledgement
+
+Data from Paul R. Goldin, *Ancient Chinese Civilization: Bibliography of Materials in Western Languages* (2019 and 2026 editions), used with permission. Any errors are mine.
