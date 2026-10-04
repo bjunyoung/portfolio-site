@@ -1,0 +1,5 @@
+.venv/
+_site/
+.quarto/
+.DS_Store
+*_files/
