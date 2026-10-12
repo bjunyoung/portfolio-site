@@ -9,7 +9,7 @@ title-block-style: none
 <div class="listing">
   <header class="list-head">
     <div class="list-title" role="heading" aria-level="1">Data Analysis</div>
-    <span class="label">1 project · 1 in preparation</span>
+    <span class="label">1 project · 1 in progress</span>
   </header>
 
   <a class="tile" href="acc-bibliometrics.html">
@@ -24,11 +24,11 @@ title-block-style: none
   </a>
 
   <div class="tile pending">
-    <div class="tile-img"><span class="label">In preparation</span></div>
+    <div class="tile-img"><span class="label">In progress</span></div>
     <div class="tile-body">
-      <span class="label">Market sizing · Public data</span>
-      <div class="tile-title" role="heading" aria-level="2">ReVape</div>
-      <p>A bottom-up re-estimate of a Korean market from public trade and survey data.</p>
+      <span class="label">Open data · Alliance analysis</span>
+      <div class="tile-title" role="heading" aria-level="2">U.S.–ROK Alliance Alignment</div>
+      <p>An open-data view of the alliance that sets U.S. demands on South Korea against Korean alignment and delivery, benchmarked against peer U.S. allies over time.</p>
     </div>
   </div>
 </div>

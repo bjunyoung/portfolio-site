@@ -5,6 +5,8 @@ project:
     - "data/acc/ACC Aggregate Results 2019 and 2026.xlsx"
     - "data/acc/*.csv"
     - "research/images/*"
+    - "images/*"
+    - "writing/images/*"
 
 website:
   title: "Junyoung Baik"

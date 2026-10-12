@@ -63,7 +63,7 @@ def table(df, signed=(), nowrap=(), even=False, decimals=None):
 
 ## Summary
 
-In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin's *Ancient Chinese Civilization: Bibliography of Materials in Western Languages*. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.
+In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin's [*Ancient Chinese Civilization: Bibliography of Materials in Western Languages*](https://www.academia.edu/37490636/Ancient_Chinese_Civilization_Bibliography_of_Materials_in_Western_Languages). In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.
 
 - The bibliography grew from 12,214 to 16,928 entries (+38.6%) between the two editions.
 - The subject matter of titles shifts slowly from decade to decade, and from about 1980 those shifts point in a consistent direction. This is the strongest result, and it holds in both editions.
@@ -261,4 +261,4 @@ Aggregate tables only; no entry-level data, titles or names. Languages with fewe
 
 ## Acknowledgement
 
-Data from Paul R. Goldin, *Ancient Chinese Civilization: Bibliography of Materials in Western Languages* (2019 and 2026 editions), used with permission. Any errors are mine.
+Data from Paul R. Goldin, *Ancient Chinese Civilization: Bibliography of Materials in Western Languages* (2019 and 2026 editions), used with permission. The current version is available on [Academia.edu](https://www.academia.edu/37490636/Ancient_Chinese_Civilization_Bibliography_of_Materials_in_Western_Languages). Any errors are mine.

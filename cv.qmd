@@ -1,8 +1,202 @@
 ---
-title: "CV"
+title: "Junyoung Baik"
+subtitle: "Curriculum Vitae"
+pagetitle: "CV"
+body-classes: cv-page
 toc: false
+format:
+  html:
+    title-block-style: default
+    format-links: false
+  typst:
+    papersize: us-letter
+    margin:
+      x: 0.75in
+      y: 0.6in
+    mainfont: "Times New Roman"
+    fontsize: 11pt
 ---
 
-::: {.ph-box}
-Placeholder · CV to come
+::: {.content-visible when-format="html"}
+::: {.cv-actions}
+[Seoul, South Korea]{.label} [bjunyoung@gmail.com]{.label} [Updated October 2026]{.label} [Download PDF](cv.pdf){.back-link}
 :::
+:::
+
+::: {.content-visible when-format="typst"}
+Seoul, South Korea · bjunyoung\@gmail.com · bjunyoung.github.io/portfolio-site · Updated October 2026
+:::
+
+## Education
+
+### Harvard University, Graduate School of Arts and Sciences
+
+[Cambridge, MA · Aug 2022 – May 2024]{.meta}
+
+*M.A., Regional Studies–East Asia*
+
+Research: premodern Korean society and diplomacy; premodern East Asia; institutions and information flows
+
+Completed with full tuition funding and an academic-year stipend from Harvard’s Program in Regional Studies–East Asia.
+
+### University of Pennsylvania, School of Arts and Sciences
+
+[Philadelphia, PA · Aug 2018 – May 2022]{.meta}
+
+*B.A., History, with Distinction in History; Minor in EALC (Chinese)*
+
+Summa Cum Laude; Benjamin Franklin Scholar; Hilary Conroy Prize for the best senior thesis on East Asia
+
+Coursework: U.S.–China relations, war strategy and policy, East Asian diplomacy, and digital humanities
+
+## Work Experience
+
+### AMUTY (K-beauty startup)
+
+[Seoul, South Korea · Jun 2026 – Aug 2026]{.meta}
+
+*Junior Staff, International Sales & Strategy Department*
+
+- Coordinated English-language communication with overseas buyers and distributors and tracked orders and payments through an automated order management system.
+
+### ROKAF History and Archives Management Agency
+
+[Gyeryong, South Korea · Oct 2024 – Jun 2026]{.meta}
+
+*Staff Sergeant (E5), Editing Assistance Airman – English Translator/Interpreter*
+
+- Translated and edited English-language material in a two-person translation team for four official ROKAF publication projects on airpower history, doctrine, institutions, weapons systems, and combined operations.
+- Produced English versions of correspondence, speeches, invitations, attendee lists, and briefing materials for foreign counterparts on one-day to one-week turnarounds.
+- Detected and corrected table-arithmetic errors, incorrect base names, and unit designations, and tracked doctrinal terminology and command relationships to maintain accuracy across publications.
+- Supported three official events through translated materials, venue preparation, visitor guidance, and English interpretation, including assistance for U.S. Seventh Air Force personnel at the 9th ROKAF History Seminar.
+- Corresponded with publishers and donors, including Osprey Publishing, regarding historical documents.
+- Designed and delivered an approximately four-week training curriculum for a replacement airman, formally evaluating progress and reporting it to the branch head.
+- Served concurrently as unit vice president for six months, running day-to-day living-quarters operations, leading unit members, and assisting the president with unit decisions.
+
+### Harvard University, IQSS Computer Lab
+
+[Cambridge, MA · Aug 2023 – May 2024]{.meta}
+
+*Helpdesk Assistance Staff*
+
+- Maintained computer-lab facilities and prepared hardware and software resources for research use, responding to student researchers’ hardware and software problems.
+
+### Harvard University, EALC Department
+
+[Cambridge, MA · Oct 2022 – Mar 2023]{.meta}
+
+*Research Assistant to Prof. Si Nae Park*
+
+- Developed webpages organizing rare Korean and East Asian books held by the Harvard-Yenching Library, Harvard Art Museums, and Harvard Map Collection.
+
+### University of Pennsylvania, Biddle Law Library
+
+[Philadelphia, PA · Aug 2018 – May 2019]{.meta}
+
+*Library Assistant*
+
+- Processed interlibrary-loan requests and prepared catalog records for non-paper media, establishing the physical format of each item from the database and, where that was insufficient, from the shelf.
+
+## Publications and Translation Projects
+
+All produced at the ROKAF History and Archives Management Agency.
+
+### *US Air & Space Forces Almanac 2025*
+
+[Mar 2026]{.meta}
+
+Translated and edited material on U.S. Air Force and Space Force weapons systems, organization, capabilities, and modernization priorities; led the proofreading and prepared the front-matter summary by comparing the 2025 and 2024 editions.
+
+### *Reexamining the U.S. and British Air Campaigns During the Korean War*
+
+[Sep 2025]{.meta}
+
+Translated and edited studies of U.S., British, and Commonwealth air operations in the Korean War, including work by Allan R. Millett and David Hobbs.
+
+### *The Luftwaffe (German Air Force) during World War II and the post-war period*
+
+[Mar 2025]{.meta}
+
+Translated and edited studies of Luftwaffe doctrine and of the postwar rebuilding of the West German air force under American and British assistance, including work by Williamson Murray and James S. Corum.
+
+### *Air Power and Combat in the Pacific War*
+
+[Ongoing]{.meta}
+
+Translated and edited studies of air operations in the Pacific War, including work by David R. Mets. Translation completed; publication ongoing at the ROKAF.
+
+## Research Experience
+
+### Independent Research, Re-reading the ACC Bibliography
+
+[Sep 2026 – Oct 2026]{.meta}
+
+- Rebuilt the 2020 study below on the 2019 and 2026 editions of Paul R. Goldin’s *Ancient Chinese Civilization: Bibliography of Materials in Western Languages* (12,214 and 16,928 entries).
+- Structured datasets for both editions through AI-assisted entry-by-entry verification with adjudication of disputed entries.
+- Measured decade-to-decade change in title meaning with multilingual sentence embeddings; part of the apparent 1970s shift traced to the change from Wade-Giles to pinyin romanization.
+- Published aggregate results with the compiler’s permission: [Re-reading the ACC bibliography](research/acc-bibliometrics.html).
+
+### Master’s Thesis, Harvard University
+
+[Advisors: Sun Joo Kim, Si Nae Park · Mar 2024]{.meta}
+
+“The In-Between Place of Sŏŏl (庶孼) in the Society and Diplomacy of Chosŏn Korea.”
+
+- Analyzed Korean, Japanese, Chinese, and English sources to connect status discrimination in Chosŏn Korea with how secondary-status members of the 1763 mission to Tokugawa Japan engaged Japanese scholars and presented that contact to readers at home.
+
+### Honors Thesis, University of Pennsylvania
+
+[Advisors: Siyen Fei, Kathy Peiss · Mar 2022]{.meta}
+
+“To Be or Not to Be Korean in Japan: Questions of Nationality and Personal Identity of Joseon Korean War Slaves, 1592–1598.”
+
+- Examined identity formation among Korean war captives during and after internment in Japan, reading popular accounts against state-issued moral instruction.
+
+### Independent Research, University of Pennsylvania
+
+[Advisor: Paul R. Goldin · Aug 2020]{.meta}
+
+“A Study on the Evolution of Chinese Studies, 1800–2019.” Unpublished.
+
+- Converted a major bibliography into a structured dataset and used Excel and basic natural-language processing in Python to analyze research trends in Chinese studies, 1800–2019.
+
+### Research Assistant, University of Pennsylvania
+
+[Advisor: Paul R. Goldin · Aug 2019]{.meta}
+
+- Traced articles, authors, and publication years through journal databases to repair mis-transcribed records in a major Western-language bibliography.
+
+## Research Grants
+
+- Korea Institute Summer Language Study Grant, Harvard University, $20,000 · May – Aug 2023
+- Asia Center Graduate Summer Language Grant, Harvard University, $5,000 · May – Aug 2023 (both funded intermediate Japanese study at the Inter-University Center for Japanese Language Studies, Yokohama)
+- History Undergraduate Research Grant, University of Pennsylvania, $600 · May – Aug 2021
+- Ruth Marcus Kanter College Alumni Society Research Grant (CURF), University of Pennsylvania, $250 · May – Aug 2021
+- Mary L. & Matthew S. Santirocco College Alumni Society Research Grant (CURF), University of Pennsylvania · May – Aug 2020
+- Penn Undergraduate Research Mentorship (EALC & CURF), University of Pennsylvania, $5,000 stipend · May – Aug 2019
+
+## Leadership and Service
+
+### Harvard East Asia Society Graduate Student Conference
+
+[Cambridge, MA · Nov 2022 – Feb 2023]{.meta}
+
+*Committee Member and Reviewer*
+
+- Reviewed conference abstracts and contributed to agenda development by leading discussion of Korea-related submissions; supported attendee guidance, supplies, and on-site logistics.
+
+### Penn for Vocational Education (P4VE)
+
+[Philadelphia, PA · Jan 2020 – Mar 2020]{.meta}
+
+*Club Secretary*
+
+- Led meetings, coordinated events, and tutored at Vocatio Career Prep High School, Philadelphia.
+
+## Skills, Certifications, and Languages
+
+- **Certifications:** Microsoft Office Specialist Master (Word Expert, Excel Expert, PowerPoint, Outlook); Certified Computerized Accounting Specialist, Level II (KCCI, 2024); Certified Word Processor Specialist (KCCI, 2024)
+- **Economics & Business:** TESAT, Grade 2 (Korea Economic Daily, 2025); Maekyung TEST, Excellent (Maeil Business Newspaper, 2025)
+- **Research & Analysis:** institutional analysis; source evaluation; citation and bibliographic verification; translation; substantive editing; documentation
+- **Digital & Data:** structured data analysis in Excel; dataset cleaning and preparation; Python and natural language processing (basic)
+- **Languages:** English and Korean (native); Japanese (advanced); Chinese (intermediate reading); Classical Chinese (intermediate)
