@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bjunyoung.github.io/portfolio-site/writing/index.html</loc>
-    <lastmod>2026-10-12T16:49:39.556Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bjunyoung.github.io/portfolio-site/index.html</loc>
-    <lastmod>2026-10-12T16:49:37.746Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bjunyoung.github.io/portfolio-site/research/index.html</loc>
-    <lastmod>2026-10-12T16:49:38.656Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bjunyoung.github.io/portfolio-site/research/acc-bibliometrics.html</loc>
-    <lastmod>2026-10-12T16:49:39.109Z</lastmod>
+    <loc>https://bjunyoung.github.io/portfolio-site/writing/sool-1763.html</loc>
+    <lastmod>2026-10-12T18:28:51.737Z</lastmod>
   </url>
   <url>
     <loc>https://bjunyoung.github.io/portfolio-site/cv.html</loc>
-    <lastmod>2026-10-12T16:49:38.192Z</lastmod>
+    <lastmod>2026-10-12T18:04:55.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bjunyoung.github.io/portfolio-site/research/acc-bibliometrics.html</loc>
+    <lastmod>2026-10-12T17:52:42.590Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bjunyoung.github.io/portfolio-site/research/index.html</loc>
+    <lastmod>2026-10-12T18:32:37.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bjunyoung.github.io/portfolio-site/index.html</loc>
+    <lastmod>2026-10-12T18:32:37.360Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bjunyoung.github.io/portfolio-site/writing/index.html</loc>
+    <lastmod>2026-10-12T18:28:51.153Z</lastmod>
   </url>
 </urlset>
