@@ -2,13 +2,8 @@
 title: "Re-reading the ACC bibliography"
 subtitle: "What two editions of a 17,000-entry bibliography show about Western-language scholarship on ancient China"
 author: "Junyoung Baik"
-date: 2026-10-04
-draft: true
+date: 2026-10-12
 ---
-
-::: {.draft-banner}
-**Draft, not for publication.** Awaiting the bibliography compiler's approval of format and content. Wording, figures and the acknowledgement may change.
-:::
 
 ```{python}
 #| label: setup
@@ -26,8 +21,42 @@ plt.rcParams.update({
     "grid.color": "#e4e3df", "grid.linewidth": 0.6, "axes.axisbelow": True,
     "legend.frameon": False,
 })
-def table(df):
-    return df.style.hide(axis="index").format(precision=3, na_rep="")
+from html import escape
+from IPython.display import HTML
+
+def _num(v, signed=False):
+    """Whole numbers as 12,345; other values as printed in the source CSV."""
+    if isinstance(v, str):
+        return escape(v)
+    if pd.isna(v):
+        return ""
+    t = f"{int(v):,}" if float(v).is_integer() else f"{v:g}"
+    return ("+" + t) if signed and v > 0 else t
+
+def table(df, signed=(), nowrap=(), even=False, decimals=None):
+    """Plain HTML table: text left, numbers right, 'of which' rows indented."""
+    num = set(df.select_dtypes("number").columns)
+    head = "".join(f'<th class="{"num" if c in num else "txt"}">{escape(str(c))}</th>'
+                   for c in df.columns)
+    body = []
+    for _, r in df.iterrows():
+        label = str(r.iloc[0]).strip()
+        r.iloc[0] = label
+        cls = "sub" if label.lower().startswith("of which") else ""
+        if not cls and any(pd.isna(r[c]) for c in num) and body and "gap" not in body[-1]:
+            cls = "gap"
+        cells = []
+        for c in df.columns:
+            k = "num" if c in num else "txt"
+            if c in nowrap: k += " nowrap"
+            v = r[c]
+            txt = (f"{v:,.{decimals[c]}f}" if decimals and c in decimals and not pd.isna(v)
+                   else _num(v, c in signed))
+            cells.append(f'<td class="{k}">{txt}</td>')
+        body.append(f'<tr class="{cls}">' + "".join(cells) + "</tr>")
+    tcls = "acc-tbl acc-tbl--even" if even else "acc-tbl"
+    return HTML(f'<div class="acc-tbl-wrap"><table class="{tcls}"><thead><tr>' + head
+                + "</tr></thead><tbody>" + "".join(body) + "</tbody></table></div>")
 ```
 
 ## Summary
@@ -62,7 +91,7 @@ Most of the bibliography is recent: about three quarters of the 2019 edition's d
 ```{python}
 #| label: tbl-editions
 #| tbl-cap: "The two editions compared."
-table(pd.read_csv(D / "editions.csv"))
+table(pd.read_csv(D / "editions.csv"), signed=("Change", "Change (%)"))
 ```
 
 ## How the field's subject matter moves
@@ -97,6 +126,26 @@ The shifts are small but, from the 1980s onward, clearly above chance. The 1970s
 
 The steps also point the same way. Directional coherence measures whether consecutive steps continue in the same direction; because consecutive steps share a decade, chance is negative.
 
+::: {.callout-note collapse="true" appearance="minimal"}
+## Full embedding drift results (shift, standard error, z and p for every step)
+
+```{python}
+#| label: tbl-drift
+#| tbl-cap: "Shift between consecutive decade centroids, all three series (× 1000). Established = permutation p < 0.05 and z ≥ 2."
+rows = []
+for key, label, _ in series:
+    for _, r in dr.iterrows():
+        if pd.isna(r[f"{key}: shift x1000"]):
+            continue
+        rows.append({"Series": label, "Step": r["Step"],
+                     "Shift × 1000": r[f"{key}: shift x1000"],
+                     "2 SE × 1000": r[f"{key}: 2 SE x1000"],
+                     "z": r[f"{key}: z"], "p": r[f"{key}: p"],
+                     "Established": r[f"{key}: established"]})
+table(pd.DataFrame(rows), nowrap=("Step",))
+```
+:::
+
 ```{python}
 #| label: tbl-coherence
 #| tbl-cap: "Directional coherence of decade steps (triples centred on 1980, 1990 and 2000)."
@@ -126,6 +175,43 @@ plt.tight_layout(); plt.show()
 
 The additions lean towards the classical masters (Zhuangzi, Laozi, Xunzi), texts and literature, and politics and law, and contain fewer translations and fewer titles on religion and on Han history. They fit the existing clusters almost as closely as the 2019 titles do, so no new subject area appears.
 
+### Subject mix by decade
+
+The same twelve clusters can be followed across the whole bibliography. Each column below shows how a decade's titles divide among them in the 2026 edition. Decades before the 1950s have under 250 titles each, so their shares move a lot on a few titles; decades before the 1920s are left out.
+
+```{python}
+#| label: fig-topic-decades
+#| fig-cap: "Share of each decade's titles by exploratory subject cluster, 2026 edition (%). 1920s onward (each decade has at least 100 titles); the 2020s are incomplete."
+from matplotlib.colors import LinearSegmentedColormap
+tbd = pd.read_csv(D / "topic_by_decade.csv")
+t26 = tbd[tbd["Edition"] == 2026].set_index("Decade")
+t26 = t26[t26["Titles"] >= 100]  # from the 1920s; earlier decades are too small to read
+topics = [c for c in t26.columns if c not in ("Edition", "Titles")]
+order = ts.sort_values("Difference (points)", ascending=False)["Topic (working name)"]
+order = [t for t in order if t in topics]
+M = t26[order].T
+cmap = LinearSegmentedColormap.from_list("seq", ["#f4f7fb", C2019, "#123a6b"])
+fig, ax = plt.subplots(figsize=(8, 4.6))
+im = ax.imshow(M.values, aspect="auto", cmap=cmap, vmin=0, vmax=20)
+ax.set_xticks(range(M.shape[1]), M.columns, fontsize=8)
+ax.xaxis.tick_top()
+ax.set_yticks(range(M.shape[0]), M.index, fontsize=8.5)
+for i in range(M.shape[0]):
+    for j in range(M.shape[1]):
+        v = M.values[i, j]
+        ax.text(j, i, f"{v:.0f}", ha="center", va="center", fontsize=7.5,
+                color="white" if v >= 12 else INK)
+ax.grid(False)
+for sp in ax.spines.values(): sp.set_visible(False)
+ax.tick_params(length=0)
+cb = fig.colorbar(im, ax=ax, fraction=0.025, pad=0.01)
+cb.set_label("% of decade's titles"); cb.outline.set_visible(False)
+cb.set_ticks([0, 5, 10, 15, 20])
+plt.tight_layout(); plt.show()
+```
+
+Since the 1980s the masters (Zhuangzi, Laozi, Xunzi), archaeology, and ethics and virtue have taken larger shares, and translations, Han history and religion smaller ones. The 2019 edition shows the same pattern; its decade shares are in the [subjects by decade](../data/acc/topic_by_decade.csv) file.
+
 ## What changed from the 2020 study
 
 The rebuilt data do not support three conclusions of the 2020 study: an acceleration of change, a convergence of the field, or a ranking of decades by how much they changed. The topic model used in 2020 (LDA) was unstable from run to run, and its topics were confounded by title language. The input file of the 2020 study is lost, so that analysis cannot be re-scored directly.
@@ -136,14 +222,22 @@ Every entry of the 2019 edition was checked against its parsed fields, which pro
 
 ```{python}
 #| label: tbl-parser
-#| tbl-cap: "Accuracy of the automatic parser against the full check of the 2019 edition."
-table(pd.read_csv(D / "parser_accuracy.csv"))
+#| tbl-cap: "Accuracy of the automatic parser against the full check of the 2019 edition. Each field was judged on 12,212 entries (12,211 for language)."
+pa = pd.read_csv(D / "parser_accuracy.csv")
+judged = pa.set_index("Field")["Entries judged"]
+# keep the caption honest if the export changes
+assert (judged.drop("Language") == 12212).all() and judged["Language"] == 12211, judged
+pa = pa.drop(columns="Entries judged").rename(columns={
+    "Errors (first parser)": "Errors, first parser",
+})
+table(pa, even=True, decimals={"Accuracy, first parser (%)": 2,
+                                 "Accuracy, improved parser (%)": 2})
 ```
 
 ## Methods
 
 1. **Parsing.** Each entry was split into contributors, title, year, publication type, journal or book, and language.
-2. **Checking.** Every 2019 entry and every new 2026 entry was checked against its parsed fields with the help of an AI tool (Claude), which meant sending entry-level data to that tool for processing. Every disagreement was resolved by hand. Entries repeated unchanged in 2026 inherited their 2019 checks; a random audit of 80 of them found no errors.
+2. **Checking.** Every 2019 entry and every new 2026 entry was checked against its parsed fields with the help of an AI tool (Claude), which meant sending entry-level data to that tool for processing. I ruled on every disagreement in the 2019 edition; in the 2026 edition the same rulings were applied, and I decided the cases they did not settle. Entries repeated unchanged in 2026 inherited their 2019 checks; a random audit of 80 of them found no substantive errors.
 3. **Embedding.** Titles were embedded with a multilingual sentence model (`paraphrase-multilingual-MiniLM-L12-v2`, 384 dimensions).
 4. **Drift.** For each decade, the average title vector was computed. Drift is the unbiased cosine separation between consecutive decade averages, tested by permutation (years shuffled) with jackknife standard errors. A step is counted when p < 0.05 and z ≥ 2.
 5. **Coherence.** Whether consecutive steps point the same way, compared with a shuffled baseline.
@@ -158,7 +252,7 @@ table(pd.read_csv(D / "parser_accuracy.csv"))
 
 ## Data
 
-Aggregate tables only; no entry-level data, titles or names. Languages with fewer than five titles are grouped, and bins with fewer than 20 titles are omitted.
+Aggregate tables only; no entry-level data, titles or names. Languages with fewer than five titles in both editions are grouped, and bins with fewer than 20 titles are omitted.
 
 - [Aggregate results workbook (Excel)](<../data/acc/ACC Aggregate Results 2019 and 2026.xlsx>)
 - CSV: [editions](../data/acc/editions.csv) · [titles per decade](../data/acc/titles_per_decade.csv) · [titles per five years](../data/acc/titles_per_5yr.csv) · [languages](../data/acc/languages.csv) · [types](../data/acc/types.csv) · [drift steps](../data/acc/drift_steps.csv) · [coherence](../data/acc/coherence.csv) · [subject shares](../data/acc/topic_shares.csv) · [subjects by decade](../data/acc/topic_by_decade.csv) · [parser accuracy](../data/acc/parser_accuracy.csv)

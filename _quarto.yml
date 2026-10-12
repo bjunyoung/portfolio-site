@@ -7,6 +7,7 @@ project:
 
 website:
   title: "Junyoung Baik"
+  site-url: "https://bjunyoung.github.io/portfolio-site/"
   navbar:
     left:
       - href: index.qmd
