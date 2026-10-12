@@ -3,4 +3,6 @@ title: "CV"
 toc: false
 ---
 
-*In preparation.*
+::: {.ph-box}
+Placeholder · CV to come
+:::

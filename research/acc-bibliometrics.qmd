@@ -59,6 +59,8 @@ def table(df, signed=(), nowrap=(), even=False, decimals=None):
                 + "</tr></thead><tbody>" + "".join(body) + "</tbody></table></div>")
 ```
 
+[← Data Analysis](index.qmd){.back-link}
+
 ## Summary
 
 In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin's *Ancient Chinese Civilization: Bibliography of Materials in Western Languages*. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.

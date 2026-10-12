@@ -1,7 +1,35 @@
 ---
-title: "Research"
+pagetitle: "Data Analysis"
 toc: false
+page-layout: full
+title-block-style: none
 ---
 
-- [**Re-reading the ACC bibliography (2019 and 2026 editions)**](acc-bibliometrics.qmd). Parsing, AI-assisted checking and semantic drift analysis of a 17,000-entry bibliography of Western-language scholarship on ancient China.
-- *ReVape* (in preparation).
+```{=html}
+<div class="listing">
+  <header class="list-head">
+    <div class="list-title" role="heading" aria-level="1">Data Analysis</div>
+    <span class="label">1 project · 1 in preparation</span>
+  </header>
+
+  <a class="tile" href="acc-bibliometrics.html">
+    <div class="tile-img"><img src="images/acc-drift.png" alt="Chart of decade-to-decade shifts in title meaning, 1960s to 2020s, for the 2019 and 2026 editions"></div>
+    <div class="tile-body">
+      <span class="label">Bibliometrics · Language models · October 2026</span>
+      <div class="tile-title" role="heading" aria-level="2">Re-reading the ACC bibliography</div>
+      <p>A rebuild of my 2020 study of Paul R. Goldin's <i>Ancient Chinese Civilization</i> bibliography, using the 2019 and 2026 editions. A new parser and a full check of every entry feed a multilingual embedding model that measures how the subject matter of titles shifts from decade to decade. The shifts are small but consistent from about 1980, and part of the apparent 1970s change turns out to be the switch from Wade-Giles to pinyin.</p>
+      <div class="stats"><span><b>16,928</b> entries</span><span><b>+38.6%</b> since 2019</span><span><b>2</b> editions</span></div>
+      <span class="more">Read the analysis →</span>
+    </div>
+  </a>
+
+  <div class="tile pending">
+    <div class="tile-img"><span class="label">In preparation</span></div>
+    <div class="tile-body">
+      <span class="label">Market sizing · Public data</span>
+      <div class="tile-title" role="heading" aria-level="2">ReVape</div>
+      <p>A bottom-up re-estimate of a Korean market from public trade and survey data.</p>
+    </div>
+  </div>
+</div>
+```

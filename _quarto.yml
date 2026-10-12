@@ -4,15 +4,17 @@ project:
   resources:
     - "data/acc/ACC Aggregate Results 2019 and 2026.xlsx"
     - "data/acc/*.csv"
+    - "research/images/*"
 
 website:
   title: "Junyoung Baik"
   site-url: "https://bjunyoung.github.io/portfolio-site/"
   navbar:
-    left:
+    title: "JY BAIK"
+    right:
       - href: index.qmd
-        text: Home
-      - text: Research
+        text: About
+      - text: Data Analysis
         href: research/index.qmd
       - text: Writing
         href: writing/index.qmd
@@ -25,7 +27,7 @@ format:
   html:
     theme:
       - cosmo
-      - brand
+      - theme.scss
     css: styles.css
     toc: true
 
