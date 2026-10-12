@@ -4,49 +4,35 @@
     "href": "writing/index.html",
     "title": "Writing",
     "section": "",
-    "text": "In preparation."
+    "text": "Placeholder · Policy memos to come"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Junyoung Baik",
     "section": "",
-    "text": "Research, data analysis and policy writing."
-  },
-  {
-    "objectID": "index.html#research",
-    "href": "index.html#research",
-    "title": "Junyoung Baik",
-    "section": "Research",
-    "text": "Research\n\nRe-reading the ACC bibliography: a 2026 rebuild of a 2020 study of how Western-language scholarship on ancient China has changed, using the 2019 and 2026 editions of Paul R. Goldin’s bibliography."
-  },
-  {
-    "objectID": "index.html#writing",
-    "href": "index.html#writing",
-    "title": "Junyoung Baik",
-    "section": "Writing",
-    "text": "Writing\nPolicy memos and essays. See Writing."
+    "text": "Phototo come\n    \n      JunyoungBaik\n      Research · Translation · Editing · Data\n    \n    \n      \n        Contactbjunyoung@gmail.comCopyCV\n        InterestsEast Asia · Defense · Policy · Law · Data · History\n        EducationM.A., Regional Studies–East Asia, Harvard University, 2024B.A., History, University of Pennsylvania, 2022\n        LanguagesEnglishNativeKoreanNativeJapaneseAdvancedChineseIntermediate\n      \n    \n  \n\n  \n    About\n    \n      I am a multilingual researcher and editor working across East Asian history, defense publishing and data analysis. I hold an M.A. in Regional Studies–East Asia from Harvard University and a B.A. in History from the University of Pennsylvania.\n      From 2024 to 2026 I served in the Republic of Korea Air Force as an English translator and editor at the ROKAF History and Archives Management Agency, where I worked on four official defense publications. My work centers on source verification, proofreading and editorial accuracy, together with structured data analysis in Excel and Python. I have also coordinated overseas buyers and distributors for a Korean beauty start-up.\n    \n  \n\n  \n    Data Analysis\n    \n      \n        \n        Bibliometrics · Language models · 2026\n        Re-reading the ACC bibliography\n        A rebuild of a 2020 study of Paul R. Goldin's bibliography of Western-language scholarship on ancient China, with a new parser, a full check of both editions and multilingual embeddings.\n        16,928 entries+38.6% since 20192 editions\n      \n      \n        In preparation\n        Market sizing · Public data\n        ReVape\n        A bottom-up re-estimate of a Korean market from public trade and survey data.\n      \n    \n  \n\n  \n    Writing\n    Placeholder · policy memos to come\n  \n\n  \n    CV\n    Placeholder · CV to come"
   },
   {
     "objectID": "research/index.html",
     "href": "research/index.html",
-    "title": "Research",
+    "title": "Junyoung Baik",
     "section": "",
-    "text": "Re-reading the ACC bibliography (2019 and 2026 editions). Parsing, AI-assisted checking and semantic drift analysis of a 17,000-entry bibliography of Western-language scholarship on ancient China.\nReVape (in preparation)."
+    "text": "Data Analysis\n    1 project · 1 in preparation\n  \n\n  \n    \n    \n      Bibliometrics · Language models · October 2026\n      Re-reading the ACC bibliography\n      A rebuild of my 2020 study of Paul R. Goldin's Ancient Chinese Civilization bibliography, using the 2019 and 2026 editions. A new parser and a full check of every entry feed a multilingual embedding model that measures how the subject matter of titles shifts from decade to decade. The shifts are small but consistent from about 1980, and part of the apparent 1970s change turns out to be the switch from Wade-Giles to pinyin.\n      16,928 entries+38.6% since 20192 editions\n      Read the analysis →\n    \n  \n\n  \n    In preparation\n    \n      Market sizing · Public data\n      ReVape\n      A bottom-up re-estimate of a Korean market from public trade and survey data."
   },
   {
     "objectID": "research/acc-bibliometrics.html",
     "href": "research/acc-bibliometrics.html",
     "title": "Re-reading the ACC bibliography",
     "section": "",
-    "text": "In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin’s Ancient Chinese Civilization: Bibliography of Materials in Western Languages. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.\n\nThe bibliography grew from 12,214 to 16,928 entries (+38.6%) between the two editions.\nThe subject matter of titles shifts slowly from decade to decade, and from about 1980 those shifts point in a consistent direction. This is the strongest result, and it holds in both editions.\nPart of the apparent change in the 1970s is the move from Wade-Giles to pinyin spelling rather than a change of subject.\nSeveral conclusions of the 2020 study do not hold on the rebuilt data."
+    "text": "← Data Analysis"
   },
   {
     "objectID": "research/acc-bibliometrics.html#summary",
     "href": "research/acc-bibliometrics.html#summary",
     "title": "Re-reading the ACC bibliography",
-    "section": "",
-    "text": "In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin’s Ancient Chinese Civilization: Bibliography of Materials in Western Languages. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.\n\nThe bibliography grew from 12,214 to 16,928 entries (+38.6%) between the two editions.\nThe subject matter of titles shifts slowly from decade to decade, and from about 1980 those shifts point in a consistent direction. This is the strongest result, and it holds in both editions.\nPart of the apparent change in the 1970s is the move from Wade-Giles to pinyin spelling rather than a change of subject.\nSeveral conclusions of the 2020 study do not hold on the rebuilt data."
+    "section": "Summary",
+    "text": "Summary\nIn 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin’s Ancient Chinese Civilization: Bibliography of Materials in Western Languages. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.\n\nThe bibliography grew from 12,214 to 16,928 entries (+38.6%) between the two editions.\nThe subject matter of titles shifts slowly from decade to decade, and from about 1980 those shifts point in a consistent direction. This is the strongest result, and it holds in both editions.\nPart of the apparent change in the 1970s is the move from Wade-Giles to pinyin spelling rather than a change of subject.\nSeveral conclusions of the 2020 study do not hold on the rebuilt data."
   },
   {
     "objectID": "research/acc-bibliometrics.html#the-bibliography-and-its-growth",
@@ -116,6 +102,6 @@
     "href": "cv.html",
     "title": "CV",
     "section": "",
-    "text": "In preparation."
+    "text": "Placeholder · CV to come"
   }
 ]
