@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "writing/index.html",
+    "href": "writing/index.html",
+    "title": "Writing",
+    "section": "",
+    "text": "In preparation."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Junyoung Baik",
+    "section": "",
+    "text": "Research, data analysis and policy writing."
+  },
+  {
+    "objectID": "index.html#research",
+    "href": "index.html#research",
+    "title": "Junyoung Baik",
+    "section": "Research",
+    "text": "Research\n\nRe-reading the ACC bibliography: a 2026 rebuild of a 2020 study of how Western-language scholarship on ancient China has changed, using the 2019 and 2026 editions of Paul R. Goldin’s bibliography."
+  },
+  {
+    "objectID": "index.html#writing",
+    "href": "index.html#writing",
+    "title": "Junyoung Baik",
+    "section": "Writing",
+    "text": "Writing\nPolicy memos and essays. See Writing."
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Research",
+    "section": "",
+    "text": "Re-reading the ACC bibliography (2019 and 2026 editions). Parsing, AI-assisted checking and semantic drift analysis of a 17,000-entry bibliography of Western-language scholarship on ancient China.\nReVape (in preparation)."
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html",
+    "href": "research/acc-bibliometrics.html",
+    "title": "Re-reading the ACC bibliography",
+    "section": "",
+    "text": "In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin’s Ancient Chinese Civilization: Bibliography of Materials in Western Languages. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.\n\nThe bibliography grew from 12,214 to 16,928 entries (+38.6%) between the two editions.\nThe subject matter of titles shifts slowly from decade to decade, and from about 1980 those shifts point in a consistent direction. This is the strongest result, and it holds in both editions.\nPart of the apparent change in the 1970s is the move from Wade-Giles to pinyin spelling rather than a change of subject.\nSeveral conclusions of the 2020 study do not hold on the rebuilt data."
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#summary",
+    "href": "research/acc-bibliometrics.html#summary",
+    "title": "Re-reading the ACC bibliography",
+    "section": "",
+    "text": "In 2020 I studied how Western-language scholarship on ancient China changed over two centuries, using Paul R. Goldin’s Ancient Chinese Civilization: Bibliography of Materials in Western Languages. In 2026 I rebuilt that study on the 2019 and 2026 editions with a new parser, a full check of every entry, and multilingual language-model embeddings.\n\nThe bibliography grew from 12,214 to 16,928 entries (+38.6%) between the two editions.\nThe subject matter of titles shifts slowly from decade to decade, and from about 1980 those shifts point in a consistent direction. This is the strongest result, and it holds in both editions.\nPart of the apparent change in the 1970s is the move from Wade-Giles to pinyin spelling rather than a change of subject.\nSeveral conclusions of the 2020 study do not hold on the rebuilt data."
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#the-bibliography-and-its-growth",
+    "href": "research/acc-bibliometrics.html#the-bibliography-and-its-growth",
+    "title": "Re-reading the ACC bibliography",
+    "section": "The bibliography and its growth",
+    "text": "The bibliography and its growth\n\n\n\n\n\n\n\n\nFigure 1: Dated titles per decade. The 2020s exist only in the 2026 edition and are incomplete.\n\n\n\n\n\nMost of the bibliography is recent: about three quarters of the 2019 edition’s dated titles were published in 1990 or later. The 2026 additions are mostly from the 2010s and 2020s, which partly reflects the usual lag before recent work is listed.\n\n\n\n\nTable 1: The two editions compared.\n\n\n\n\n\n\n\nMeasure\n2019\n2026\nChange\nChange (%)\n\n\n\n\nRecords (all record classes)\n12,287\n17,015\n+4,728\n+38.5\n\n\nEntries\n12,214\n16,928\n+4,714\n+38.6\n\n\nEditorial notes\n73\n86\n+13\n+17.8\n\n\nDated titles\n12,207\n16,902\n+4,695\n+38.5\n\n\nContributor mentions\n13,824\n19,276\n+5,452\n+39.4\n\n\nNew or reworded dated titles in 2026\n\n5,049\n\n\n\n\nof which differ from a 2019 title only in case or punctuation\n\n154"
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#how-the-fields-subject-matter-moves",
+    "href": "research/acc-bibliometrics.html#how-the-fields-subject-matter-moves",
+    "title": "Re-reading the ACC bibliography",
+    "section": "How the field’s subject matter moves",
+    "text": "How the field’s subject matter moves\nEach title was converted into a numerical representation of its meaning by a multilingual language model. For each decade I took the average of those representations and measured how far it moves from the previous decade, testing every step against a shuffled-years baseline.\n\n\n\n\n\n\n\n\nFigure 2: Shift between consecutive decades (unbiased cosine separation × 1000), with ±2 standard errors. Filled markers pass both tests (permutation p &lt; 0.05 and z ≥ 2).\n\n\n\n\n\nThe shifts are small but, from the 1980s onward, clearly above chance. The 1970s step passes both tests on the titles as printed, but about half of it disappears when Wade-Giles and pinyin spellings are standardised, and it then falls below two standard errors. The steps from 1980 to 2010 survive standardisation, and in the 2026 edition the new step from the 2010s to the 2020s is also clear.\nThe steps also point the same way. Directional coherence measures whether consecutive steps continue in the same direction; because consecutive steps share a decade, chance is negative.\n\n\n\n\n\n\nNoteFull embedding drift results (shift, standard error, z and p for every step)\n\n\n\n\n\n\n\n\n\nTable 2: Shift between consecutive decade centroids, all three series (× 1000). Established = permutation p &lt; 0.05 and z ≥ 2.\n\n\n\n\n\n\n\nSeries\nStep\nShift × 1000\n2 SE × 1000\nz\np\nEstablished\n\n\n\n\n2019 edition, titles as printed\n1960s to 1970s\n1.516\n1.638\n1.85\n0.001\nNo\n\n\n2019 edition, titles as printed\n1970s to 1980s\n1.099\n0.903\n2.43\n0.0005\nYes\n\n\n2019 edition, titles as printed\n1980s to 1990s\n0.849\n0.55\n3.09\n0.0005\nYes\n\n\n2019 edition, titles as printed\n1990s to 2000s\n0.976\n0.395\n4.94\n0.0005\nYes\n\n\n2019 edition, titles as printed\n2000s to 2010s\n0.557\n0.287\n3.88\n0.0005\nYes\n\n\n2019 edition, romanisation standardised\n1960s to 1970s\n1.074\n1.326\n1.62\n0.004\nNo\n\n\n2019 edition, romanisation standardised\n1970s to 1980s\n0.556\n0.665\n1.67\n0.0115\nNo\n\n\n2019 edition, romanisation standardised\n1980s to 1990s\n0.713\n0.652\n2.19\n0.0005\nYes\n\n\n2019 edition, romanisation standardised\n1990s to 2000s\n0.84\n0.419\n4.01\n0.0005\nYes\n\n\n2019 edition, romanisation standardised\n2000s to 2010s\n0.53\n0.282\n3.76\n0.0005\nYes\n\n\n2026 edition\n1960s to 1970s\n1.511\n1.549\n1.95\n0.002\nNo\n\n\n2026 edition\n1970s to 1980s\n1.067\n0.881\n2.42\n0.002\nYes\n\n\n2026 edition\n1980s to 1990s\n0.845\n0.542\n3.12\n0.0005\nYes\n\n\n2026 edition\n1990s to 2000s\n0.944\n0.376\n5.02\n0.0005\nYes\n\n\n2026 edition\n2000s to 2010s\n0.405\n0.199\n4.07\n0.0005\nYes\n\n\n2026 edition\n2010s to 2020s\n0.588\n0.286\n4.11\n0.0005\nYes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 3: Directional coherence of decade steps (triples centred on 1980, 1990 and 2000).\n\n\n\n\n\n\n\nSeries\nObserved\nChance (null mean)\np (400 shuffles; floor 0.0025)\n\n\n\n\n2019, corrected titles\n0.481\n-0.459\n0.0025\n\n\n2019, romanisation standardised\n0.396\n-0.458\n0.0025\n\n\n2026 edition\n0.453\n-0.465\n0.0025"
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#what-the-2026-additions-are-about",
+    "href": "research/acc-bibliometrics.html#what-the-2026-additions-are-about",
+    "title": "Re-reading the ACC bibliography",
+    "section": "What the 2026 additions are about",
+    "text": "What the 2026 additions are about\nTitles were grouped into twelve exploratory subject clusters fitted on the 2019 edition. The 2026 additions were placed into the same clusters without refitting, so differences reflect the bibliography rather than the method. The cluster names are working labels, not validated categories.\n\n\n\n\n\n\n\n\nFigure 3: Share of 2026 additions minus share of 2019 titles, by exploratory subject cluster (percentage points).\n\n\n\n\n\nThe additions lean towards the classical masters (Zhuangzi, Laozi, Xunzi), texts and literature, and politics and law, and contain fewer translations and fewer titles on religion and on Han history. They fit the existing clusters almost as closely as the 2019 titles do, so no new subject area appears.\n\nSubject mix by decade\nThe same twelve clusters can be followed across the whole bibliography. Each column below shows how a decade’s titles divide among them in the 2026 edition. Decades before the 1950s have under 250 titles each, so their shares move a lot on a few titles; decades before the 1920s are left out.\n\n\n\n\n\n\n\n\nFigure 4: Share of each decade’s titles by exploratory subject cluster, 2026 edition (%). 1920s onward (each decade has at least 100 titles); the 2020s are incomplete.\n\n\n\n\n\nSince the 1980s the masters (Zhuangzi, Laozi, Xunzi), archaeology, and ethics and virtue have taken larger shares, and translations, Han history and religion smaller ones. The 2019 edition shows the same pattern; its decade shares are in the subjects by decade file."
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#what-changed-from-the-2020-study",
+    "href": "research/acc-bibliometrics.html#what-changed-from-the-2020-study",
+    "title": "Re-reading the ACC bibliography",
+    "section": "What changed from the 2020 study",
+    "text": "What changed from the 2020 study\nThe rebuilt data do not support three conclusions of the 2020 study: an acceleration of change, a convergence of the field, or a ranking of decades by how much they changed. The topic model used in 2020 (LDA) was unstable from run to run, and its topics were confounded by title language. The input file of the 2020 study is lost, so that analysis cannot be re-scored directly."
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#data-quality",
+    "href": "research/acc-bibliometrics.html#data-quality",
+    "title": "Re-reading the ACC bibliography",
+    "section": "Data quality",
+    "text": "Data quality\nEvery entry of the 2019 edition was checked against its parsed fields, which produced about 4,300 corrections, including roughly 800 recovered dates. Re-running the analysis on the corrected data changed no conclusion.\n\n\n\n\nTable 4: Accuracy of the automatic parser against the full check of the 2019 edition. Each field was judged on 12,212 entries (12,211 for language).\n\n\n\n\n\n\n\nField\nErrors, first parser\nAccuracy, first parser (%)\nAccuracy, improved parser (%)\n\n\n\n\nContributor names\n604\n95.05\n97.59\n\n\nContributor count\n434\n96.45\n99.56\n\n\nContributor order\n0\n100.00\n100.00\n\n\nContributor roles\n31\n99.75\n99.55\n\n\nTitle\n142\n98.84\n99.03\n\n\nYear\n867\n92.90\n95.13\n\n\nYear source\n794\n93.50\n95.61\n\n\nLanguage\n226\n98.15\n98.17\n\n\nPublication type\n296\n97.58\n97.85\n\n\nJournal or book\n1,202\n90.16\n92.92"
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#methods",
+    "href": "research/acc-bibliometrics.html#methods",
+    "title": "Re-reading the ACC bibliography",
+    "section": "Methods",
+    "text": "Methods\n\nParsing. Each entry was split into contributors, title, year, publication type, journal or book, and language.\nChecking. Every 2019 entry and every new 2026 entry was checked against its parsed fields with the help of an AI tool (Claude), which meant sending entry-level data to that tool for processing. I ruled on every disagreement in the 2019 edition; in the 2026 edition the same rulings were applied, and I decided the cases they did not settle. Entries repeated unchanged in 2026 inherited their 2019 checks; a random audit of 80 of them found no substantive errors.\nEmbedding. Titles were embedded with a multilingual sentence model (paraphrase-multilingual-MiniLM-L12-v2, 384 dimensions).\nDrift. For each decade, the average title vector was computed. Drift is the unbiased cosine separation between consecutive decade averages, tested by permutation (years shuffled) with jackknife standard errors. A step is counted when p &lt; 0.05 and z ≥ 2.\nCoherence. Whether consecutive steps point the same way, compared with a shuffled baseline.\nSubjects. Twelve exploratory clusters fitted on 2019; the 2026 edition mapped onto them without refitting."
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#limitations",
+    "href": "research/acc-bibliometrics.html#limitations",
+    "title": "Re-reading the ACC bibliography",
+    "section": "Limitations",
+    "text": "Limitations\n\nThe analysis describes a curated bibliography, not the whole field.\nThe 2020s are incomplete, and each edition under-covers its most recent years.\nThe subject clusters and their names are exploratory until checked against human coding.\nTitles alone are a narrow window on content, and the measured shifts are small in absolute size."
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#data",
+    "href": "research/acc-bibliometrics.html#data",
+    "title": "Re-reading the ACC bibliography",
+    "section": "Data",
+    "text": "Data\nAggregate tables only; no entry-level data, titles or names. Languages with fewer than five titles in both editions are grouped, and bins with fewer than 20 titles are omitted.\n\nAggregate results workbook (Excel)\nCSV: editions · titles per decade · titles per five years · languages · types · drift steps · coherence · subject shares · subjects by decade · parser accuracy"
+  },
+  {
+    "objectID": "research/acc-bibliometrics.html#acknowledgement",
+    "href": "research/acc-bibliometrics.html#acknowledgement",
+    "title": "Re-reading the ACC bibliography",
+    "section": "Acknowledgement",
+    "text": "Acknowledgement\nData from Paul R. Goldin, Ancient Chinese Civilization: Bibliography of Materials in Western Languages (2019 and 2026 editions), used with permission. Any errors are mine."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "In preparation."
+  }
+]
